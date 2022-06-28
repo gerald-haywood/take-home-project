@@ -48,7 +48,7 @@ class Github extends Component {
             <div>
                 <section id="card">
                     <Search searchProfile={this.getProfile.bind(this)} />
-                    <Profile />
+                    <Profile userData={this.state}/>
                 </section>
             </div>
         );
