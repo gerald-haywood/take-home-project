@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
+import './Search.css'
 
 class Search extends Component {
+    
 
     submitForm(event){
         event.preventDefault();
@@ -18,10 +20,11 @@ class Search extends Component {
                         <input
                             type="serach"
                             ref="username"
-                            placeholder="Enter a username and hit enter."
+                            placeholder="Username"
                         >
                         </input>
                     </label>
+                    <button type="submit" value=" Send" className="btn btn-dark" id="submit">Find</button>
                 </form>
             </div>
         );
