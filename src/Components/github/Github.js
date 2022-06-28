@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Profile from './Components/profile/Profile';
-import Search from './Components/search/Search';
+import Profile from '../profile/Profile';
+import Search from '../search/Search';
 
 const API = 'https://api.github.com/users';
 class Github extends Component {
@@ -47,7 +47,7 @@ class Github extends Component {
         return(
             <div>
                 <section id="card">
-                    <Search />
+                    <Search searchProfile={this.getProfile.bind(this)} />
                     <Profile />
                 </section>
             </div>
