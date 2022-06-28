@@ -9,38 +9,36 @@ class Github extends Component {
       super(props)
     
       this.state = {
-         username: 'hiteshchoudhary',
-         name: '',
-         avatar: '',
-         repos: '',
-         followers: '',
-         following: '',
-         homeURL: '',
-         notFound: ''
+         username: null,
+         name: null,
+         avatar: null,
+         repos: null,
+         followers: null,
+         following: null,
+         homeURL: null,
+         notFound: null
       };
     }
 
     getProfile(username){
         let finalURL = `${API}/${username}`;
         fetch(finalURL)
-        .then((res) => res.json())
+        .then((response) => {
+            return response.json();
+        })
         .then((data) => {
             this.setState({
                 username: data.login,
                 name: data.name,
-                avatar: data.avatar,
-                repos: data.repos,
+                avatar: data.avatar_url,
+                repos: data.public_repos,
                 followers: data.followers,
                 following: data.following,
                 homeURL: data.homeURL,
                 notFound: data.message
             })
         })
-        .catch((error) => console.log('Unable to fetch data'))
-    }
-
-    componentDidMount(){
-        this.getProfile(this.state.username);
+        .catch(() => console.log('Unable to fetch data'))
     }
 
     render(){
