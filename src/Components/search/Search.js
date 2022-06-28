@@ -1,10 +1,18 @@
 import React, { Component } from 'react';
 
 class Search extends Component {
+
+    submit(event){
+        event.preventDefault();
+        let value = this.refs.username.value;
+        this.props.getProfile(value);
+    }
+
+
     render(){
         return(
             <div className="search">
-                <form>
+                <form onSubmit={this.submit.bind(this)}>
                     <label>
                         <input
                             type="serach"
