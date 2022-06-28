@@ -22,41 +22,15 @@ class Profile extends Component {
         }
         else {
             return(
-                <section>
-                    <div className="github-profile">
-                        <div title={userdata.username}>
-                            <img src={userdata.avatar} alt="user" />
-                        </div>
-                        <h2>
-                            <div title={userdata.username}>
-                                {userdata.name || userdata.username}
-                            </div>
-                        </h2>
-                        <h3>{userdata.location}</h3>
+                <div className='container-md'>
+                    <img src={userdata.avatar} alt="user" className='w-25 p-3 mx-auto' />
+                    <div className='card-body text-center'>
+                        <h4>{userdata.name || userdata.username}</h4>
+                        <div className='user-followers'>Followers: {userdata.followers}</div>
+                        <div className='user-repositories'>Repositories: {userdata.repos}</div>
+                        <div className='user-following'>Following: {userdata.following}</div>
                     </div>
-                    <div className="github-profile-state">
-                        <ul>
-                            <div
-                                title="Number of followers">
-                                    <span>Number of followers: </span>
-                                    {userdata.followers}
-                                    
-                            </div>
-                            <div
-                                title="Number of repositories">
-                                    <span>Number of repositories: </span>
-                                    {userdata.repos}
-                                    
-                            </div>
-                            <div
-                                title="Number of users following">
-                                    <span>Number of users following: </span>
-                                    {userdata.following}
-                                    
-                            </div>
-                        </ul>
-                    </div>
-                </section>
+                </div>
             );
         }
     }
