@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './Search.css'
 
 class Search extends Component {
     
@@ -14,17 +13,15 @@ class Search extends Component {
 
     render(){
         return(
-            <div className="search">
+            <div className="text-center pt-4">
                 <form onSubmit={this.submitForm.bind(this)}>
-                    <label>
                         <input
-                            type="serach"
+                            type="search"
                             ref="username"
                             placeholder="Username"
                         >
                         </input>
-                    </label>
-                    <button type="submit" value=" Send" className="btn btn-dark" id="submit">Find</button>
+                    <button type="submit" value=" Send" className="btn btn-dark ms-4 btn-sm" id="submit">Find</button>
                 </form>
             </div>
         );
