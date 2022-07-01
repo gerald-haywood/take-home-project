@@ -1,15 +1,17 @@
 import React, { Component } from 'react';
 
+/**
+ * Allows search of a user within the Github database by username.
+ */
 class Search extends Component {
     
-
+    // Allows the values inside the search bar to be changed (i.e., adding or removing a letter or number)
     submitForm(event){
         event.preventDefault();
         let value = this.refs.username.value;
         this.props.searchProfile(value);
         this.refs.username.value = '';
     }
-
 
     render(){
         return(

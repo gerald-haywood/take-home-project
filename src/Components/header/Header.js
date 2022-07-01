@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 
+/**
+ * Renders the header component.
+ */
 class Header extends Component {
     render() {
         return (

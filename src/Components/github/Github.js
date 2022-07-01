@@ -2,9 +2,17 @@ import React, { Component } from 'react';
 import Profile from '../profile/Profile';
 import Search from '../search/Search';
 
+/**
+ * Defines a variable for the API globally within the component.
+ */
 const API = 'https://api.github.com/users';
+
+/**
+ * Fetches every username stored in the Github database and allows user to search for specific user.
+ */
 class Github extends Component {
 
+    // Defines properties for a user on Github.
     constructor(props) {
       super(props)
     
@@ -20,6 +28,7 @@ class Github extends Component {
       };
     }
 
+    // API checks to see if the username searched matches one within their database.
     getProfile(username){
         let finalURL = `${API}/${username}`;
         fetch(finalURL)
@@ -41,6 +50,7 @@ class Github extends Component {
         .catch(() => console.log('Unable to fetch data'))
     }
 
+    // Displays the search bar and a user's photo, name, and specific information if found.
     render(){
         return(
             <div>
